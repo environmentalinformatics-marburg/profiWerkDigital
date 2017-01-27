@@ -11,10 +11,6 @@ h1 {
 	margin-bottom: 1rem;
 }
 
-h1:before {
-	content:"ProfiWerk digital ";
-	font-weight: bold;
-}
 
 header p {
 	margin: 0;
