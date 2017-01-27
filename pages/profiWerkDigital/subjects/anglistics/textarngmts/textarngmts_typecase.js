@@ -77,7 +77,7 @@ draw();
 // clear the canvas draw all texts
 function draw(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-	ctx.fillStyle = '#EECC00';
+	ctx.fillStyle = '#f6f7cd';
 	ctx.fillRect(0, 0, canvas.width, typecase_border);
 	
 	ctx.fillStyle = 'grey';	
