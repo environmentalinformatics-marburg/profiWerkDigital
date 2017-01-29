@@ -10,6 +10,8 @@ var offsetX=canvasOffset.left;
 var offsetY=canvasOffset.top;
 var scrollX=$canvas.scrollLeft();
 var scrollY=$canvas.scrollTop();
+var canvasWidth=$canvas.width();
+var canvasHeigth=$canvas.height();
 
 var text_height = 16;
 var text_gap = 7;
@@ -25,17 +27,17 @@ var startY;
 var texts=[];
 
 // some test texts
-texts.push({text:"Man",x:20,y:20});
-texts.push({text:"glaubt",x:150,y:70});
-texts.push({text:"man",x:90,y:70});
-texts.push({text:"hat",x:60,y:90});
-texts.push({text:"schon",x:80,y:120});
-texts.push({text:"alles",x:180,y:300});
-texts.push({text:"gesehen",x:800,y:300});
-texts.push({text:"und",x:200,y:160});
-texts.push({text:"dann",x:300,y:200});
-texts.push({text:"kam",x:350,y:250});
-texts.push({text:"ProPraxis",x:20,y:300});
+texts.push({text:"Man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"glaubt",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"hat",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"schon",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"alles",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"gesehen",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"und",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"dann",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"kam",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"ProPraxis",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
 
 /*// some test long texts
 texts.push({text:"ManManManManManManManMan",x:20,y:20});
@@ -50,7 +52,7 @@ texts.push({text:"danndanndanndanndanndanndanndanndann",x:300,y:200});
 texts.push({text:"kamkamkamkamkamkamkamkamkamkam",x:350,y:250});
 texts.push({text:"ProPraxisProPraxisProPraxisProPraxisProPraxisProPraxisProPraxisProPraxis",x:20,y:300});*/
 
-typecased_texts = [];
+arranged_texts = [];
 
 // calculate width of each text for hit-testing purposes
 ctx.font="16px verdana";
@@ -59,17 +61,17 @@ for(var i=0;i<texts.length;i++){
 	text.width=ctx.measureText(text.text).width;
 	text.height=text_height;
 }
-for(var i=0;i<typecased_texts.length;i++){
-	var text=typecased_texts[i];
+for(var i=0;i<arranged_texts.length;i++){
+	var text=arranged_texts[i];
 	text.width=ctx.measureText(text.text).width;
 	text.height=text_height;
 }
-update_typecased_texts();
+update_arranged_texts();
 update_texts();
 
 // this var will hold the index of the selected text
 var selectedText=-1;
-var selectedType = 0;   // 0 == text, 1 == typecased_text
+var selectedType = 0;   // 0 == text, 1 == arranged_text
 
 // START: draw all texts to the canvas
 draw();
@@ -87,18 +89,18 @@ function draw(){
 	}
 	
 	ctx.fillStyle = 'black';	
-	for(var i=0;i<typecased_texts.length;i++){
-		var text=typecased_texts[i];
+	for(var i=0;i<arranged_texts.length;i++){
+		var text=arranged_texts[i];
 		ctx.fillText(text.text,text.x,text.y);
 	}
 }
 
-function update_typecased_texts() {
+function update_arranged_texts() {
 	var posX = 0;
 	typecase_border = text_height + text_gap;
 	var posY = typecase_border;
-	for(var i=0;i<typecased_texts.length;i++){
-		var text=typecased_texts[i];
+	for(var i=0;i<arranged_texts.length;i++){
+		var text=arranged_texts[i];
 		text.x = posX;
 		text.y = posY;		
 		posX += text.width + text_gap;
@@ -157,8 +159,8 @@ function handleMouseDown(e){
 		  selectedText=i;
 	  }
   }
-  for(var i=0;i<typecased_texts.length;i++){
-	  if(textHittest(typecased_texts, startX, startY, i)){
+  for(var i=0;i<arranged_texts.length;i++){
+	  if(textHittest(arranged_texts, startX, startY, i)){
 		  selectedType=1;
 		  selectedText=i;
 	  }
@@ -175,45 +177,45 @@ function handleMouseUp(e){
 		  var text = texts[selectedText];
 		  if(text.y<typecase_border) {
 			targetText = -1;  
-			for(var i=0;i<typecased_texts.length;i++){
-				if(textHittest(typecased_texts, startX, startY, i)){
+			for(var i=0;i<arranged_texts.length;i++){
+				if(textHittest(arranged_texts, startX, startY, i)){
 					targetText=i;
 				}
 			}
 			if(targetText < 0) {
 				texts.splice(selectedText, 1);
-				typecased_texts.push(text);
+				arranged_texts.push(text);
 			} else {
 				texts.splice(selectedText, 1);
-				typecased_texts.splice(targetText, 0, text);
+				arranged_texts.splice(targetText, 0, text);
 			}
 		  }
 	  } else if(selectedType==1) {
-		  var text = typecased_texts[selectedText];
+		  var text = arranged_texts[selectedText];
 		  if(text.y>typecase_border) {
-			  typecased_texts.splice(selectedText, 1);
+			  arranged_texts.splice(selectedText, 1);
 			  texts.push(text);
 		  } else {
 				targetText = -1;  
-				for(var i=0;i<typecased_texts.length;i++){
-					if(i!=selectedText && textHittest(typecased_texts, startX, startY, i)){
+				for(var i=0;i<arranged_texts.length;i++){
+					if(i!=selectedText && textHittest(arranged_texts, startX, startY, i)){
 						targetText=i;
 					}
 				}
 				if(targetText >= 0) {
 					if(selectedText<targetText) {
-						typecased_texts.splice(selectedText, 1);
-						typecased_texts.splice(targetText - 1, 0, text);
+						arranged_texts.splice(selectedText, 1);
+						arranged_texts.splice(targetText - 1, 0, text);
 					} else if(selectedText>targetText) {
-						typecased_texts.splice(selectedText, 1);
-						typecased_texts.splice(targetText, 0, text);
+						arranged_texts.splice(selectedText, 1);
+						arranged_texts.splice(targetText, 0, text);
 					}
 				}
 			}
 	  }
   }
   selectedText=-1;
-  update_typecased_texts();
+  update_arranged_texts();
   update_texts();
   draw();
 }
@@ -222,7 +224,7 @@ function handleMouseUp(e){
 function handleMouseOut(e){
   e.preventDefault();
   selectedText=-1;
-  update_typecased_texts();
+  update_arranged_texts();
   update_texts();
   draw();
 }
@@ -248,11 +250,15 @@ function handleMouseMove(e){
 	  text.x += dx;
 	  text.y += dy;
   } else if(selectedType==1) {
-	  var text = typecased_texts[selectedText];
+	  var text = arranged_texts[selectedText];
 	  text.x += dx;
 	  text.y += dy;
   }
   draw();
+}
+
+function rpos(p){
+	return Math.floor((Math.random() * p) + 1);
 }
 
 // listen for mouse events
