@@ -1,5 +1,5 @@
 $(function(){
-
+var checkOrder = 0;
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
 
@@ -24,10 +24,84 @@ var startX;
 var startY;
 
 // some text objects
-var texts=[];
+//var texts=[];
+/**
+ * Text
+ **/
+function Text(id, arrId, sentenceId, type, text, x, y)
+{
+  this.id = id;
+  this.arrId = arrId;
+  this.sentenceId = sentenceId;
+  this.type = type;
+  this.x = x;
+  this.y = y;
+  this.text = text;
+  this.width = 0;//ctx.measureText(this.text).width;
+  this.height = 0;//ctx.measureText(this.text).height;
+}
+
+var texts = new Array();
+var fieldMWidth = (canvasWidth - 50)/2;
+var fieldHWidth = canvasWidth - 50;
+var fieldHeight = canvasHeigth;
+var scalaPositions = 0;
+
+
+texts[texts.length] = new Text(1,0,1,2,"It");
+texts[texts.length] = new Text(2,0,1,2,"becomes apparent fairly early in their first semester");
+texts[texts.length] = new Text(3,0,1,2,"that");
+texts[texts.length] = new Text(4,0,1,2,"linguistics is a difficult subject for most first-year students");
+
+texts[texts.length] = new Text(5,0,2,2," This ");
+texts[texts.length] = new Text(6,0,2,2,"is due to");
+texts[texts.length] = new Text(7,0,2,2,"three reasons");
+
+texts[texts.length] = new Text(8,0,3,2,"The first reason");
+texts[texts.length] = new Text(9,0,3,2,"is");
+texts[texts.length] = new Text(10,0,3,2,"the fact that linguistics is usually not taught at school");
+
+texts[texts.length] = new Text(11,0,4,2,"In this respect");
+texts[texts.length] = new Text(12,0,4,2,"literature or cultural studies");
+texts[texts.length] = new Text(13,0,4,2,"have a more privileged status");
+
+texts[texts.length] = new Text(14,0,5,2,"These subjects");
+texts[texts.length] = new Text(15,0,5,2,"are taught by teachers in school");
+
+texts[texts.length] = new Text(16,0,6,2,"The second reason");
+texts[texts.length] = new Text(17,0,6,2,"is");
+texts[texts.length] = new Text(18,0,6,2,"the fact that students have to learn");
+texts[texts.length] = new Text(19,0,6,2,"many new terms");
+texts[texts.length] = new Text(20,0,6,2,"in linguistics");
+
+texts[texts.length] = new Text(21,0,7,2,"To get a grip on");
+texts[texts.length] = new Text(22,0,7,2,"all the new concepts");
+texts[texts.length] = new Text(23,0,7,2,"is very demanding");
+
+texts[texts.length] = new Text(24,0,8,2,"Another reason");
+texts[texts.length] = new Text(25,0,9,2,"is");
+texts[texts.length] = new Text(26,0,10,2,"the abstract nature of linguistics");
+
+texts[texts.length] = new Text(27,0,11,2,"Often");
+texts[texts.length] = new Text(28,0,11,2,"this");
+texts[texts.length] = new Text(29,0,11,2,"scares students off");
+
+//texts[texts.length] = new Text(9999,0,0,1,"that ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+//texts[texts.length] = new Text(9999,0,0,1," is ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+//texts[texts.length] = new Text(9999,0,0,1," is",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+
+texts[texts.length] = new Text(1,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+texts[texts.length] = new Text(2,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+texts[texts.length] = new Text(3,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+texts[texts.length] = new Text(4,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+texts[texts.length] = new Text(5,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+texts[texts.length] = new Text(6,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+texts[texts.length] = new Text(7,0,0,1,", ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+texts[texts.length] = new Text(8,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+
 
 // some test texts
-texts.push({text:"Man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+/*texts.push({text:"Man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
 texts.push({text:"glaubt",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
 texts.push({text:"man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
 texts.push({text:"hat",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
@@ -37,7 +111,7 @@ texts.push({text:"gesehen",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
 texts.push({text:"und",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
 texts.push({text:"dann",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
 texts.push({text:"kam",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"ProPraxis",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"ProPraxis",x:rpos(canvasWidth),y:rpos(canvasHeigth)});*/
 
 /*// some test long texts
 texts.push({text:"ManManManManManManManMan",x:20,y:20});
@@ -52,12 +126,42 @@ texts.push({text:"danndanndanndanndanndanndanndanndann",x:300,y:200});
 texts.push({text:"kamkamkamkamkamkamkamkamkamkam",x:350,y:250});
 texts.push({text:"ProPraxisProPraxisProPraxisProPraxisProPraxisProPraxisProPraxisProPraxis",x:20,y:300});*/
 
-arranged_texts = [];
+//arranged_texts = [];
+arranged_texts=new Array();
+
+/**
+ *  shufle array random, extends of class Array
+ **/
+Array.prototype.shuffle = arrayShuffle;
+
+function arrayShuffle(){
+  var tmp, rand;
+  for(var i =0; i < this.length; i++){
+    rand = Math.floor(Math.random() * this.length);
+    tmp = this[i]; 
+    this[i] = this[rand]; 
+    this[rand] =tmp;
+  }
+}
+
+var yPositions = new Array(); 
+for(var i = 0; i<texts.length; i++) {
+     yPositions[i] = i*10 + 60;
+}
+yPositions.shuffle();
 
 // calculate width of each text for hit-testing purposes
 ctx.font="16px verdana";
 for(var i=0;i<texts.length;i++){
 	var text=texts[i];
+	if(text.type == 1){
+	  	text.x = 10;
+	  	text.y = text.id*10+80;
+	} else {
+	    scalaPositions++;
+	  	text.x=rpos(canvasWidth, 80, canvasWidth/2);
+	  	text.y=yPositions[i];
+	} 
 	text.width=ctx.measureText(text.text).width;
 	text.height=text_height;
 }
@@ -83,6 +187,7 @@ function draw(){
 	ctx.fillRect(0, 0, canvas.width, typecase_border);
 	
 	ctx.fillStyle = 'grey';	
+	ctx.font="14px Arial";
 	for(var i=0;i<texts.length;i++){
 		var text=texts[i];
 		ctx.fillText(text.text,text.x,text.y);
@@ -103,14 +208,14 @@ function update_arranged_texts() {
 		var text=arranged_texts[i];
 		text.x = posX;
 		text.y = posY;		
-		posX += text.width + text_gap;
+		posX += ctx.measureText(text.text).width + text_gap;
 		if(posX>canvas.width && text.x>0) {
 			typecase_border += text_height + text_gap;
 			posX = 0;
 			posY = typecase_border;
 			text.x = posX;
 			text.y = posY;
-			posX += text.width + text_gap;
+			posX += ctx.measureText(text.text).width + text_gap;
 		}
 	}
 	typecase_border += text_height + text_gap;
@@ -141,6 +246,19 @@ function textHittest(array, x, y, textIndex){
 		x<=text.x+text.width &&
 		y>=text.y-text.height && 
 		y<=text.y);
+}
+
+// test the order of arranged text
+function check_arranged_texts() {
+	for(var i = 0;i < arranged_texts.length;i++){
+		if(i > 0){
+		  if(arranged_texts[i].id-arranged_texts[i-1].id == 1 && 
+		    arranged_texts[i].sentenceId == arranged_texts[i-1].sentenceId ){
+		      checkOrder++;
+		  }
+		}//else if (arranged_texts[i].id == arranged_texts[i].id){checkOrder = 1;}
+		else checkOrder = 0;
+  }
 }
 
 // handle mousedown events
@@ -227,6 +345,14 @@ function handleMouseOut(e){
   update_arranged_texts();
   update_texts();
   draw();
+  if(checkOrder > 0) {	
+	  var dif = 75/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
+	  document.getElementById("scala").style.height = 75-dif + "px";
+	  document.getElementById("scala").style.top = 415+dif + "px";
+  	 // ctx.fillRect(canvasWidth-100,136+dif, 78, 60-dif);
+	 //  ctx.drawImage(scala_image,0,0,150,200,canvasWidth-130,100,150,200);
+    	// document.getElementById("index").innerHTML= "checkOrder:" +checkOrder;
+  }
 }
 
 // handle mousemove events
@@ -257,8 +383,17 @@ function handleMouseMove(e){
   draw();
 }
 
-function rpos(p){
-	return Math.floor((Math.random() * p) + 1);
+function rpos(p, left, right){
+	  var p = p;
+	  var res = 0;
+	  res = Math.floor((Math.random() * p) + 1);
+	  if (res > right) {
+	    return right-Math.round(Math.random()*100);
+	  }   
+	  if (res < left) {
+	    return left+Math.round(Math.random()*10);;
+	  } 
+		return res;
 }
 
 // listen for mouse events
