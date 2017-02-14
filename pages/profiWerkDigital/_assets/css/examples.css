@@ -18,8 +18,46 @@ header p {
 	background: rgba(250, 252, 255, 0.7);
 }
 
-.content, canvas {
-	background: white;
+#canvas {
+  background-image:url("../../img/scala_1.png");
+	background-position: 815px 100px;
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index:10;
+}
+
+#index{
+  position: absolute;
+}
+
+#scala {
+  background: red none repeat scroll 0 0;
+  height: 75px;
+  left: 1420px;
+  position: absolute;
+  top: 415px;
+  width: 93px;
+}
+
+#scalaPix{
+	position: relative;
+	background: red;
+	width:40px;
+	height:40px;
+}
+
+#textDiv {
+	float:left;
+  width:809px;
+  height:200px;
+	background: rgba(250, 252, 255, 0.7) none repeat scroll 0 0;
+}
+
+
+#canvasDiv {
+ background: rgba(250, 252, 255, 0.7);
+	width: 960px;
+  height: 400px;
 }
 
 .content {
