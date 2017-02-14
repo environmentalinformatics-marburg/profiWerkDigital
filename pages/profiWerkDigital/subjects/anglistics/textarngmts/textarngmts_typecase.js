@@ -1,5 +1,7 @@
-$(function(){
+
 var checkOrder = 0;
+$(function(){
+
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
 
@@ -24,7 +26,25 @@ var startX;
 var startY;
 
 // some text objects
-//var texts=[];
+var texts = new Array();
+var fieldMWidth = (canvasWidth - 50)/2;
+var fieldHWidth = canvasWidth - 50;
+var fieldHeight = canvasHeigth ;
+var scalaPositions = 0;
+// some test texts
+/*
+texts.push({text:"Man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"glaubt",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"hat",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"schon",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"alles",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"gesehen",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"und",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"dann",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"kam",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
+texts.push({text:"ProPraxis",x:rpos(canvasWidth),y:rpos(canvasHeigth)});*/
+
 /**
  * Text
  **/
@@ -41,13 +61,61 @@ function Text(id, arrId, sentenceId, type, text, x, y)
   this.height = 0;//ctx.measureText(this.text).height;
 }
 
-var texts = new Array();
-var fieldMWidth = (canvasWidth - 50)/2;
-var fieldHWidth = canvasWidth - 50;
-var fieldHeight = canvasHeigth;
-var scalaPositions = 0;
+/*
+texts[texts.length] = new Text(1,0,1,2,"becomes apparent fairly early in their first semester",300,100);
+texts[texts.length] = new Text(2,0,1,2,"linguistics is a difficult subject for most first-year students",280,120);
 
+texts[texts.length] = new Text(3,0,2,2,"is due to",260,140);
+texts[texts.length] = new Text(4,0,2,2,"three reasons",240,160);
 
+texts[texts.length] = new Text(5,0,3,2,"The first reason",220,180);
+texts[texts.length] = new Text(6,0,3,2,"the fact that linguistics is usually not taught at school",320,80);
+
+texts[texts.length] = new Text(7,0,4,2,"In this respect",200,200);
+texts[texts.length] = new Text(8,0,4,2,"literature or cultural studies",200,220);
+texts[texts.length] = new Text(9,0,4,2,"have a more privileged status",200,240);
+
+texts[texts.length] = new Text(10,0,5,2,"These subjects",220,260);
+texts[texts.length] = new Text(11,0,5,2,"are taught by teachers in schoo",240,280);
+
+texts[texts.length] = new Text(12,0,6,2,"The second reason",260,300);
+texts[texts.length] = new Text(13,0,6,2,"the fact that students have to learn",280,320);
+texts[texts.length] = new Text(14,0,6,2,"many new terms",300,340);
+texts[texts.length] = new Text(15,0,6,2,"in linguistics",320,360);
+
+texts[texts.length] = new Text(1,0,1,2,"becomes apparent fairly early in their first semester",rpos(canvasWidth),rpos(fieldHeight));
+texts[texts.length] = new Text(2,0,1,2,"linguistics is a difficult subject for most first-year students",rpos(canvasWidth),rpos(fieldHeight));
+
+texts[texts.length] = new Text(3,0,2,2,"is due to",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(4,0,2,2,"three reasons",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+
+texts[texts.length] = new Text(5,0,3,2,"The first reason",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(6,0,3,2,"the fact that linguistics is usually not taught at school",rpos(canvasWidth, 50, 400),rpos(fieldHeight));
+
+texts[texts.length] = new Text(7,0,4,2,"In this respect",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(8,0,4,2,"literature or cultural studies",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(9,0,4,2,"have a more privileged status",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+
+texts[texts.length] = new Text(10,0,5,2,"These subjects",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(11,0,5,2,"are taught by teachers in schoo",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+
+texts[texts.length] = new Text(12,0,6,2,"The second reason",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(13,0,6,2,"the fact that students have to learn",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(14,0,6,2,"many new terms",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+texts[texts.length] = new Text(15,0,6,2,"in linguistics",rpos(canvasWidth, 85, 400),rpos(fieldHeight));
+
+texts[texts.length] = new Text(9999,0,0,1," It",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1,"that ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1," This ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1," is ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1," is",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1,", ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(9999,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+*/
 texts[texts.length] = new Text(1,0,1,2,"It");
 texts[texts.length] = new Text(2,0,1,2,"becomes apparent fairly early in their first semester");
 texts[texts.length] = new Text(3,0,1,2,"that");
@@ -86,48 +154,18 @@ texts[texts.length] = new Text(27,0,11,2,"Often");
 texts[texts.length] = new Text(28,0,11,2,"this");
 texts[texts.length] = new Text(29,0,11,2,"scares students off");
 
-//texts[texts.length] = new Text(9999,0,0,1,"that ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-//texts[texts.length] = new Text(9999,0,0,1," is ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-//texts[texts.length] = new Text(9999,0,0,1," is",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
+//texts[texts.length] = new Text(9999,0,0,1,"that ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+//texts[texts.length] = new Text(9999,0,0,1," is ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+//texts[texts.length] = new Text(9999,0,0,1," is",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
 
-texts[texts.length] = new Text(1,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-texts[texts.length] = new Text(2,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-texts[texts.length] = new Text(3,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-texts[texts.length] = new Text(4,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-texts[texts.length] = new Text(5,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-texts[texts.length] = new Text(6,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-texts[texts.length] = new Text(7,0,0,1,", ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-texts[texts.length] = new Text(8,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasHeigth, 100, 350));
-
-
-// some test texts
-/*texts.push({text:"Man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"glaubt",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"man",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"hat",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"schon",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"alles",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"gesehen",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"und",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"dann",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"kam",x:rpos(canvasWidth),y:rpos(canvasHeigth)});
-texts.push({text:"ProPraxis",x:rpos(canvasWidth),y:rpos(canvasHeigth)});*/
-
-/*// some test long texts
-texts.push({text:"ManManManManManManManMan",x:20,y:20});
-texts.push({text:"glaubtglaubtglaubtglaubtglaubt",x:20,y:70});
-texts.push({text:"manmanmanmanmanmanmanmanmanman",x:90,y:70});
-texts.push({text:"hathathathathathathathathat",x:60,y:90});
-texts.push({text:"schonschonschonschonschonschonschon",x:80,y:120});
-texts.push({text:"allesallesallesallesallesallesalles",x:180,y:300});
-texts.push({text:"gesehengesehengesehengesehengesehengesehengesehen",x:800,y:300});
-texts.push({text:"undundundundundundundundundund",x:200,y:160});
-texts.push({text:"danndanndanndanndanndanndanndanndann",x:300,y:200});
-texts.push({text:"kamkamkamkamkamkamkamkamkamkam",x:350,y:250});
-texts.push({text:"ProPraxisProPraxisProPraxisProPraxisProPraxisProPraxisProPraxisProPraxis",x:20,y:300});*/
-
-//arranged_texts = [];
-arranged_texts=new Array();
+texts[texts.length] = new Text(1,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(2,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(3,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(4,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(5,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(6,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(7,0,0,1,", ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(8,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
 
 /**
  *  shufle array random, extends of class Array
@@ -150,9 +188,12 @@ for(var i = 0; i<texts.length; i++) {
 }
 yPositions.shuffle();
 
-// calculate width of each text for hit-testing purposes
+arranged_texts=new Array();
+//load_media();
 ctx.font="16px verdana";
-for(var i=0;i<texts.length;i++){
+
+// calculate x and y position and width of each text for hit-testing purposes
+for(var i = 0;i < texts.length;i++){
 	var text=texts[i];
 	if(text.type == 1){
 	  	text.x = 10;
@@ -165,6 +206,7 @@ for(var i=0;i<texts.length;i++){
 	text.width=ctx.measureText(text.text).width;
 	text.height=text_height;
 }
+// calculate x and y position and width of each arranded text for hit-testing purposes
 for(var i=0;i<arranged_texts.length;i++){
 	var text=arranged_texts[i];
 	text.width=ctx.measureText(text.text).width;
@@ -174,25 +216,33 @@ update_arranged_texts();
 update_texts();
 
 // this var will hold the index of the selected text
-var selectedText=-1;
-var selectedType = 0;   // 0 == text, 1 == arranged_text
+var selectedText = -1;
+var selectedType = 0; // 0 == text, 1 == arranged_text
+//var selectedId = 0;
 
 // START: draw all texts to the canvas
 draw();
+
+/*function load_media()
+{
+  scala_image = new Image();
+  scala_image.src="scala_1.png";
+  scala_image_start = new Image();
+  scala_image_start.src="scala_0.png";
+}*/
 
 // clear the canvas draw all texts
 function draw(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	ctx.fillStyle = '#f6f7cd';
 	ctx.fillRect(0, 0, canvas.width, typecase_border);
-	
-	ctx.fillStyle = 'grey';	
-	ctx.font="14px Arial";
 	for(var i=0;i<texts.length;i++){
 		var text=texts[i];
-		ctx.fillText(text.text,text.x,text.y);
+	//	ctx.fillStyle = '#f50';
+		ctx.font="14px Arial";
+		ctx.fillStyle = 'grey';	
+    ctx.fillText(text.text,text.x,text.y);	
 	}
-	
 	ctx.fillStyle = 'black';	
 	for(var i=0;i<arranged_texts.length;i++){
 		var text=arranged_texts[i];
@@ -203,9 +253,11 @@ function draw(){
 function update_arranged_texts() {
 	var posX = 0;
 	typecase_border = text_height + text_gap;
-	var posY = typecase_border;
+	var posY = typecase_border;	
+
 	for(var i=0;i<arranged_texts.length;i++){
 		var text=arranged_texts[i];
+		text.arrId = i;
 		text.x = posX;
 		text.y = posY;		
 		posX += ctx.measureText(text.text).width + text_gap;
@@ -215,17 +267,17 @@ function update_arranged_texts() {
 			posY = typecase_border;
 			text.x = posX;
 			text.y = posY;
-			posX += ctx.measureText(text.text).width + text_gap;
+			posX += ctx.measureText(text.text).width  + text_gap;
 		}
-	}
+	}	
 	typecase_border += text_height + text_gap;
 }
 
 function update_texts() {
 	for(var i=0;i<texts.length;i++){
 		var text = texts[i];
-		if(text.x+text.width > canvas.width) {
-			text.x = canvas.width - text.width;
+		if(text.x+ctx.measureText(text.text).width  > canvas.width) {
+			text.x = canvas.width -ctx.measureText(text.text).width ;
 		}
 		if(text.x<0) {
 			text.x = 0;
@@ -239,15 +291,6 @@ function update_texts() {
 	}
 }
 
-// test if x,y is inside the bounding box of texts[textIndex]
-function textHittest(array, x, y, textIndex){
-	var text = array[textIndex];
-	return(x>=text.x && 
-		x<=text.x+text.width &&
-		y>=text.y-text.height && 
-		y<=text.y);
-}
-
 // test the order of arranged text
 function check_arranged_texts() {
 	for(var i = 0;i < arranged_texts.length;i++){
@@ -259,6 +302,15 @@ function check_arranged_texts() {
 		}//else if (arranged_texts[i].id == arranged_texts[i].id){checkOrder = 1;}
 		else checkOrder = 0;
   }
+}
+
+// test if x,y is inside the bounding box of texts[textIndex]
+function textHittest(array, x, y, textIndex){
+	var text = array[textIndex];
+	return(x>=text.x && 
+		x<=text.x+ctx.measureText(text.text).width  &&
+		y>=text.y-text.height && 
+		y<=text.y);
 }
 
 // handle mousedown events
@@ -275,6 +327,7 @@ function handleMouseDown(e){
 	  if(textHittest(texts, startX, startY, i)){
 		  selectedType=0;
 		  selectedText=i;
+		//  selectedId = texts[i].id;
 	  }
   }
   for(var i=0;i<arranged_texts.length;i++){
@@ -298,7 +351,7 @@ function handleMouseUp(e){
 			for(var i=0;i<arranged_texts.length;i++){
 				if(textHittest(arranged_texts, startX, startY, i)){
 					targetText=i;
-				}
+				}	
 			}
 			if(targetText < 0) {
 				texts.splice(selectedText, 1);
@@ -332,10 +385,21 @@ function handleMouseUp(e){
 			}
 	  }
   }
+  
   selectedText=-1;
   update_arranged_texts();
   update_texts();
+  check_arranged_texts();
   draw();
+  
+  if(checkOrder > 0) {	
+      var dif = 75/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
+      document.getElementById("scala").style.height = 75-dif + "px";
+      document.getElementById("scala").style.top = 415+dif + "px";
+  	 // ctx.fillRect(canvasWidth-100,136+dif, 78, 60-dif);
+	  //  ctx.drawImage(scala_image,0,0,150,200,canvasWidth-130,100,150,200);
+    // document.getElementById("index").innerHTML= "checkOrder:" +checkOrder;
+  }
 }
 
 // also done dragging
@@ -345,14 +409,6 @@ function handleMouseOut(e){
   update_arranged_texts();
   update_texts();
   draw();
-  if(checkOrder > 0) {	
-	  var dif = 75/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
-	  document.getElementById("scala").style.height = 75-dif + "px";
-	  document.getElementById("scala").style.top = 415+dif + "px";
-  	 // ctx.fillRect(canvasWidth-100,136+dif, 78, 60-dif);
-	 //  ctx.drawImage(scala_image,0,0,150,200,canvasWidth-130,100,150,200);
-    	// document.getElementById("index").innerHTML= "checkOrder:" +checkOrder;
-  }
 }
 
 // handle mousemove events
@@ -384,16 +440,16 @@ function handleMouseMove(e){
 }
 
 function rpos(p, left, right){
-	  var p = p;
-	  var res = 0;
-	  res = Math.floor((Math.random() * p) + 1);
-	  if (res > right) {
-	    return right-Math.round(Math.random()*100);
-	  }   
-	  if (res < left) {
-	    return left+Math.round(Math.random()*10);;
-	  } 
-		return res;
+  var p = p;
+  var res = 0;
+  res = Math.floor((Math.random() * p) + 1);
+  if (res > right) {
+    return right-Math.round(Math.random()*100);
+  }   
+  if (res < left) {
+    return left+Math.round(Math.random()*10);;
+  } 
+	return res;
 }
 
 // listen for mouse events

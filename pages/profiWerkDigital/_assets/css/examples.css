@@ -33,7 +33,8 @@ header p {
 #scala {
   background: red none repeat scroll 0 0;
   height: 75px;
-  left: 1420px;
+  left: 50%;
+  margin-left: 372px;
   position: absolute;
   top: 415px;
   width: 93px;
