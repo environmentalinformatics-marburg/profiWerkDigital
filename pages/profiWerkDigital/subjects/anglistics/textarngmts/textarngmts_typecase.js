@@ -27,9 +27,6 @@ var startY;
 
 // some text objects
 var texts = new Array();
-//var fieldMWidth = (canvasWidth - 50)/2;
-//var fieldHWidth = canvasWidth - 50;
-//var fieldHeight = canvasHeigth ;
 var scalaPositions = 0;
 // some test texts
 /*
@@ -158,14 +155,14 @@ texts[texts.length] = new Text(29,0,11,2,"scares students off");
 //texts[texts.length] = new Text(9999,0,0,1," is ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
 //texts[texts.length] = new Text(9999,0,0,1," is",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
 
-texts[texts.length] = new Text(1,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
-texts[texts.length] = new Text(2,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
-texts[texts.length] = new Text(3,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
-texts[texts.length] = new Text(4,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
-texts[texts.length] = new Text(5,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
-texts[texts.length] = new Text(6,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
-texts[texts.length] = new Text(7,0,0,1,", ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
-texts[texts.length] = new Text(8,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
+texts[texts.length] = new Text(1,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
+texts[texts.length] = new Text(2,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
+texts[texts.length] = new Text(3,0,0,1,".  ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
+texts[texts.length] = new Text(4,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
+texts[texts.length] = new Text(5,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
+texts[texts.length] = new Text(6,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
+texts[texts.length] = new Text(7,0,0,1,", ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
+texts[texts.length] = new Text(8,0,0,1,". ",rpos(canvasWidth, 5, 30),rpos(canvasWidth, 100, 350));
 
 /**
  *  shufle array random, extends of class Array
