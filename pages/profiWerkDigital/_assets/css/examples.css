@@ -20,7 +20,7 @@ header p {
 
 #canvas {
   background-image:url("../../img/scala_1.png");
-	background-position: 815px 100px;
+	background-position: 807px 100px;
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index:10;
@@ -32,12 +32,12 @@ header p {
 
 #scala {
   background: red none repeat scroll 0 0;
-  height: 75px;
+  height: 131px;
   left: 50%;
-  margin-left: 372px;
+  margin-left: 350px;
   position: absolute;
-  top: 415px;
-  width: 93px;
+  top: 381px;
+  width: 122px;
 }
 
 #scalaPix{

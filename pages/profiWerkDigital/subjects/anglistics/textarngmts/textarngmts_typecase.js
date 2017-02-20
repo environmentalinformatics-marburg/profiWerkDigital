@@ -27,9 +27,9 @@ var startY;
 
 // some text objects
 var texts = new Array();
-var fieldMWidth = (canvasWidth - 50)/2;
-var fieldHWidth = canvasWidth - 50;
-var fieldHeight = canvasHeigth ;
+//var fieldMWidth = (canvasWidth - 50)/2;
+//var fieldHWidth = canvasWidth - 50;
+//var fieldHeight = canvasHeigth ;
 var scalaPositions = 0;
 // some test texts
 /*
@@ -240,8 +240,12 @@ function draw(){
 		var text=texts[i];
 	//	ctx.fillStyle = '#f50';
 		ctx.font="14px Arial";
-		ctx.fillStyle = 'grey';	
-    ctx.fillText(text.text,text.x,text.y);	
+		ctx.fillStyle = 'grey';
+		if (selectedType == 0)
+		  if(selectedText >- 1 && selectedText == i){
+      			ctx.font="bold 16px Arial";
+		}
+    	ctx.fillText(text.text,text.x,text.y);	
 	}
 	ctx.fillStyle = 'black';	
 	for(var i=0;i<arranged_texts.length;i++){
@@ -393,9 +397,9 @@ function handleMouseUp(e){
   draw();
   
   if(checkOrder > 0) {	
-      var dif = 75/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
-      document.getElementById("scala").style.height = 75-dif + "px";
-      document.getElementById("scala").style.top = 415+dif + "px";
+      var dif = 131/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
+      document.getElementById("scala").style.height = 131-dif + "px";
+      document.getElementById("scala").style.top = 381+dif + "px";
   	 // ctx.fillRect(canvasWidth-100,136+dif, 78, 60-dif);
 	  //  ctx.drawImage(scala_image,0,0,150,200,canvasWidth-130,100,150,200);
     // document.getElementById("index").innerHTML= "checkOrder:" +checkOrder;
