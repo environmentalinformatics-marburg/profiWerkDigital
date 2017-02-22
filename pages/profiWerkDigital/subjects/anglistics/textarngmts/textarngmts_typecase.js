@@ -242,8 +242,9 @@ function draw(){
 		  if(selectedText >- 1 && selectedText == i){
       			ctx.font="bold 16px Arial";
 		}
-    	ctx.fillText(text.text,text.x,text.y);	
+	    	ctx.fillText(text.text,text.x,text.y);	
 	}
+	ctx.font="14px Arial";
 	ctx.fillStyle = 'black';	
 	for(var i=0;i<arranged_texts.length;i++){
 		var text=arranged_texts[i];
