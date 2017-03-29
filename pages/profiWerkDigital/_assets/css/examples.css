@@ -19,11 +19,19 @@ header p {
 }
 
 #canvas {
+}
+
+#clipart{
   background-image:url("../../img/scala_1.png");
-	background-position: 807px 100px;
-	background-repeat: no-repeat;
-	position: absolute;
-	z-index:10;
+  background-position: 361px 162px;
+  float:left;
+  width:182px;
+  height:400px;
+  background-repeat: repeat-x;
+  left: 50%;
+  margin-left: 299px;
+  position: absolute;
+  z-index:10;
 }
 
 #index{
@@ -32,12 +40,20 @@ header p {
 
 #scala {
   background: red none repeat scroll 0 0;
-  height: 131px;
+  height: 72px;
   left: 50%;
-  margin-left: 350px;
+  margin-left: 332px;
   position: absolute;
-  top: 381px;
-  width: 122px;
+  top: 372px;
+  width: 94px;
+  z-index: 0;
+}
+
+#container{
+  background: #fafcff;
+  width:960px;
+  height:400px;
+  padding: 5px;
 }
 
 #scalaPix{
@@ -48,17 +64,17 @@ header p {
 }
 
 #textDiv {
-	float:left;
+  float:left;
   width:809px;
   height:200px;
-	background: rgba(250, 252, 255, 0.7) none repeat scroll 0 0;
+  background: rgba(250, 252, 255, 0.7) none repeat scroll 0 0;
 }
 
 
 #canvasDiv {
- background: rgba(250, 252, 255, 0.7);
-	width: 960px;
-  height: 400px;
+  width: 760px;
+  height: 200px;
+  float:left;
 }
 
 .content {
