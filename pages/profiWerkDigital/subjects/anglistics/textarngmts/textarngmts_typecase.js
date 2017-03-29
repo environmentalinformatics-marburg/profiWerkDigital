@@ -122,14 +122,14 @@ arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(7).");
 arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"The abstract nature of linguistics");
 texts[texts.length] = new Text(24,0,8,2,"Another reason");
 arranged_texts[arranged_texts.length] = new Text(25,0,9,2,"is");
-texts[texts.length] = new Text(0,2,0,0,"another reason");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"another reason");
 texts[texts.length] = new Text(26,0,10,2,"the abstract nature of linguistics");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(8).");
 
 // Sentence 9
 arranged_texts[arranged_texts.length] = new Text(27,0,9,2,"Often");
 arranged_texts[arranged_texts.length] = new Text(27,0,9,2,"students are scared off by");
-texts[texts.length] = new Text(28,0,9,2,"this");
+arranged_texts[arranged_texts.length] = new Text(28,2,9,2,"this");
 texts[texts.length] = new Text(29,0,9,2,"scares students off");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(9).");
 
@@ -197,15 +197,16 @@ function draw(){
 	ctx.fillRect(0, 0, canvas.width, typecase_border);
 	for(var i = 0;i < texts.length;i++){
 		var text=texts[i];
-	//	drawTextBG(text.text, text.x,text.y, 'green');
-		ctx.fillStyle = '#333333';
+	  ctx.fillStyle = '#333333';
+	  if( text.id === 0){
+	    ctx.fillStyle = '#999';
+	  }
 	  ctx.fillText(text.text,text.x,text.y);	
 	}
 	for(i = 0;i < arranged_texts.length;i++){
 		var text=arranged_texts[i];
 		ctx.fillStyle = '#333333';
-	
-		if(text.arrId === 1){
+	  if(text.arrId === 1){
 		  ctx.fillStyle = '#4ee5e2';
 		  var width = ctx.measureText(text.text).width;
 		  ctx.fillRect(text.x, text.y-text.height, width, text.height+2);
