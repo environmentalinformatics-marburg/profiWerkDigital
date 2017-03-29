@@ -383,8 +383,7 @@ function handleMouseUp(e){
   draw();
   
   if(checkOrder > 0) {	
-   
-      if (scalaPositions - checkOrder === 1 ) {
+      if (checkOrder === 20) {
         document.getElementById("scala").style.background = "#0bea70";
         document.getElementById("window").style.display = "block";
       }
