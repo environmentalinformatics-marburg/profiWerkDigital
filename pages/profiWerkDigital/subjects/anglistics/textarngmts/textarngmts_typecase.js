@@ -89,21 +89,21 @@ arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(3).");
 arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"Literature or cultural studies");
 arranged_texts[arranged_texts.length] = new Text(13,0,4,2,"have a more privileged status");
 arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"in this respect");
-texts[texts.length] = new Text(11,0,4,2,"In this respect");
+texts[texts.length] = new Text(11,0,4,2,"In this respect,");
 texts[texts.length] = new Text(12,0,4,2,"literature or cultural studies");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(4).");
 
 // Sentence 5
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"Teachers teach");
-arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"these subjects in scholl");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"these subjects in school");
 texts[texts.length] = new Text(14,0,5,2,"These subjects");
 texts[texts.length] = new Text(15,0,5,2,"are taught by teachers in school");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(5).");
 
 // Sentence 6
-arranged_texts[arranged_texts.length] = new Text(18,0,6,2,"The fact that students have to learn");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"The fact that students have to learn");
 arranged_texts[arranged_texts.length] = new Text(17,2,6,2,"is");
-arranged_texts[arranged_texts.length] = new Text(16,2,6,2,"the second reason");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"the second reason");
 texts[texts.length] = new Text(18,0,6,2,"the fact that students have to learn");
 texts[texts.length] = new Text(19,1,6,2,"many new terms");
 texts[texts.length] = new Text(16,0,6,2,"The second reason");
@@ -121,14 +121,15 @@ arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(7).");
 // Sentence 8
 arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"The abstract nature of linguistics");
 texts[texts.length] = new Text(24,0,8,2,"Another reason");
-arranged_texts[arranged_texts.length] = new Text(25,0,9,2,"is");
+arranged_texts[arranged_texts.length] = new Text(25,0,8,2,"is");
 arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"another reason");
-texts[texts.length] = new Text(26,0,10,2,"the abstract nature of linguistics");
+texts[texts.length] = new Text(26,0,8,2,"the abstract nature of linguistics");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(8).");
 
 // Sentence 9
-arranged_texts[arranged_texts.length] = new Text(27,0,9,2,"Often");
-arranged_texts[arranged_texts.length] = new Text(27,0,9,2,"students are scared off by");
+texts[texts.length] = new Text(27,0,9,2,"Often,");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"Often");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"students are scared off by");
 arranged_texts[arranged_texts.length] = new Text(28,2,9,2,"this");
 texts[texts.length] = new Text(29,0,9,2,"scares students off");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(9).");
@@ -174,18 +175,14 @@ draw();
 
 /// expand with color, background etc.
 function drawTextBG(txt, x, y, style, font='32px arial') {
-    
     ctx.save();
    // ctx.font = font;
     ctx.textBaseline = 'top';
     ctx.fillStyle = style;
-    
     var width = ctx.measureText(txt).width;
     ctx.fillRect(x, y, width, parseInt(font, 10));
-    
     ctx.fillStyle = '#000';
     ctx.fillText(txt, x, y);
-    
     ctx.restore();
 }
 
@@ -207,7 +204,7 @@ function draw(){
 		var text=arranged_texts[i];
 		ctx.fillStyle = '#333333';
 	  if(text.arrId === 1){
-		  ctx.fillStyle = '#4ee5e2';
+		  ctx.fillStyle = '#0bea70';
 		  var width = ctx.measureText(text.text).width;
 		  ctx.fillRect(text.x, text.y-text.height, width, text.height+2);
 		  ctx.fillStyle = '#333333';
@@ -386,6 +383,11 @@ function handleMouseUp(e){
   draw();
   
   if(checkOrder > 0) {	
+   
+      if (scalaPositions - checkOrder === 1 ) {
+        document.getElementById("scala").style.background = "#0bea70";
+        document.getElementById("window").style.display = "block";
+      }
       var dif = 72/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
       document.getElementById("scala").style.height = 72-dif + "px";
       document.getElementById("scala").style.top = 380+dif + "px";
@@ -447,5 +449,8 @@ $("#canvas").mousedown(function(e){handleMouseDown(e);});
 $("#canvas").mousemove(function(e){handleMouseMove(e);});
 $("#canvas").mouseup(function(e){handleMouseUp(e);});
 $("#canvas").mouseout(function(e){handleMouseOut(e);});
-
+document.getElementById('exit').onclick = function() {  
+       document.getElementById("window").style.display="none"; 
+      location.reload();
+}
 }); // end $(function(){});

@@ -18,7 +18,17 @@ header p {
 	background: rgba(250, 252, 255, 0.7);
 }
 
-#canvas {
+#window{
+    border: 1px #999 solid;
+    box-shadow: 10px 10px 15px silver;
+    display: none;
+    height: 80px;
+    left: 50%;
+    margin-left: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 142px;
 }
 
 #clipart{
