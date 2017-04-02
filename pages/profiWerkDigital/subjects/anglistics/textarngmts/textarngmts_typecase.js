@@ -15,7 +15,7 @@ var scrollY=$canvas.scrollTop();
 var canvasWidth=$canvas.width();
 var canvasHeigth=$canvas.height();
 
-var text_height = 16;
+var text_height = 20;
 var text_gap = 7;
 var typecase_border = 0;
 
@@ -60,18 +60,17 @@ function Text(id, arrId, sentenceId, type, text, x, y)
 }
 
 // Sentence 1
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"That");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"That");
 arranged_texts[arranged_texts.length] = new Text(4,1,1,2,"linguistics is a difficult subject for most first-year students");
-texts[texts.length] = new Text(1,0,1,2,"It");
-arranged_texts[arranged_texts.length] = new Text(2,0,1,2,"becomes apparent fairly early in their first semester");
-texts[texts.length] = new Text(3,0,1,2,"that");
+arranged_texts[arranged_texts.length] = new Text(2,1,1,2,"becomes apparent fairly early in their first semester");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(1).");
-
+texts[texts.length] = new Text(1,0,1,2,"It");
+texts[texts.length] = new Text(3,0,1,2,"that");
 
 // Sentence 2
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"There are");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"There are");
 arranged_texts[arranged_texts.length] = new Text(7,1,2,2,"three reasons");
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"for");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"for");
 arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"this");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(2).");
 texts[texts.length] = new Text(5,0,2,2," This ");
@@ -79,69 +78,65 @@ texts[texts.length] = new Text(6,0,2,2,"is due to");
 
 // Sentence 3
 arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"The fact that linguistics is usually not taught at school");
-arranged_texts[arranged_texts.length] = new Text(9,0,3,2,"is");
+arranged_texts[arranged_texts.length] = new Text(9,2,3,2,"is");
 arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"the first reason");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(3).");
 texts[texts.length] = new Text(8,0,3,2,"The first reason");
 texts[texts.length] = new Text(10,0,3,2,"the fact that linguistics is usually not taught at school");
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(3).");
 
 // Sentence 4
 arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"Literature or cultural studies");
-arranged_texts[arranged_texts.length] = new Text(13,0,4,2,"have a more privileged status");
+arranged_texts[arranged_texts.length] = new Text(13,1,4,2,"have a more privileged status");
 arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"in this respect");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(4).");
 texts[texts.length] = new Text(11,0,4,2,"In this respect,");
 texts[texts.length] = new Text(12,0,4,2,"literature or cultural studies");
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(4).");
 
 // Sentence 5
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"Teachers teach");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"Teachers teach");
 arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"these subjects in school");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(5).");
 texts[texts.length] = new Text(14,0,5,2,"These subjects");
 texts[texts.length] = new Text(15,0,5,2,"are taught by teachers in school");
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(5).");
 
 // Sentence 6
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"The fact that students have to learn");
+arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"The fact that students have to learn");
 arranged_texts[arranged_texts.length] = new Text(17,2,6,2,"is");
-arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"the second reason");
-texts[texts.length] = new Text(18,0,6,2,"the fact that students have to learn");
-texts[texts.length] = new Text(19,1,6,2,"many new terms");
-texts[texts.length] = new Text(16,0,6,2,"The second reason");
-texts[texts.length] = new Text(20,0,6,2,"in linguistics");
+arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"the second reason");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(6).");
+texts[texts.length] = new Text(16,0,6,2,"The second reason");
+texts[texts.length] = new Text(18,0,6,2,"the fact that students have to learn");
+texts[texts.length] = new Text(19,1,6,2,"many new terms in linguistics");
 
 // Sentence 7
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"It");
-arranged_texts[arranged_texts.length] = new Text(23,0,7,2,"is very demanding");
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"to get a grip on");
-texts[texts.length] = new Text(21,0,7,2,"To get a grip on");
-arranged_texts[arranged_texts.length] = new Text(22,2,7,2,"all the new concepts");
+arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"It");
+arranged_texts[arranged_texts.length] = new Text(22,1,7,2,"is very demanding");
+arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"to get a grip on");
+arranged_texts[arranged_texts.length] = new Text(21,2,7,2,"all the new concepts");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(7).");
+texts[texts.length] = new Text(20,0,7,2,"To get a grip on");
 
 // Sentence 8
 arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"The abstract nature of linguistics");
-texts[texts.length] = new Text(24,0,8,2,"Another reason");
-arranged_texts[arranged_texts.length] = new Text(25,0,8,2,"is");
+arranged_texts[arranged_texts.length] = new Text(24,2,8,2,"is");
 arranged_texts[arranged_texts.length] = new Text(0,2,0,0,"another reason");
-texts[texts.length] = new Text(26,0,8,2,"the abstract nature of linguistics");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(8).");
+texts[texts.length] = new Text(23,0,8,2,"Another reason");
+texts[texts.length] = new Text(25,0,8,2,"the abstract nature of linguistics");
 
 // Sentence 9
-texts[texts.length] = new Text(27,0,9,2,"Often,");
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"Often");
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"students are scared off by");
-arranged_texts[arranged_texts.length] = new Text(28,2,9,2,"this");
-texts[texts.length] = new Text(29,0,9,2,"scares students off");
+arranged_texts[arranged_texts.length] = new Text(26,2,0,0,"Often");
+arranged_texts[arranged_texts.length] = new Text(0,1,0,0,"students are scared off by");
+arranged_texts[arranged_texts.length] = new Text(27,2,9,2,"this");
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(9).");
-
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"To include aspects of linguistics into English language teaching ...(10).");
+texts[texts.length] = new Text(28,0,9,2,"scares students off");
 
 /**
  *  shufle array random, extends of class Array
  **/
 Array.prototype.shuffle = arrayShuffle;
 //load_media();
-ctx.font="12px aral";
+ctx.font="16px aral";
 var yPositions = new Array();
 
 // this var will hold the index of the selected text
@@ -160,7 +155,7 @@ function arrayShuffle(){
 }
 
 for(var i = 0; i<texts.length; i++) {
-     yPositions[i] = i*11 + 180;
+     yPositions[i] = i*11 + 250;
 }
 
 yPositions.shuffle();
@@ -189,8 +184,7 @@ function drawTextBG(txt, x, y, style, font='32px arial') {
 // clear the canvas draw all texts
 function draw(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-		//ctx.fillStyle = '#333333';
-	ctx.fillStyle = '#f6f7cd';
+	ctx.fillStyle = '#ffffbf';
 	ctx.fillRect(0, 0, canvas.width, typecase_border);
 	for(var i = 0;i < texts.length;i++){
 		var text=texts[i];
@@ -204,13 +198,16 @@ function draw(){
 		var text=arranged_texts[i];
 		ctx.fillStyle = '#333333';
 	  if(text.arrId === 1){
-		  ctx.fillStyle = '#0bea70';
+		  ctx.fillStyle = '#e0f3f8';
 		  var width = ctx.measureText(text.text).width;
 		  ctx.fillRect(text.x, text.y-text.height, width, text.height+2);
 		  ctx.fillStyle = '#333333';
 		} 
 		if(text.arrId === 2){
-		  ctx.fillStyle = 'green';
+		  ctx.fillStyle = '#e0f3f8';
+		  var width = ctx.measureText(text.text).width;
+		  ctx.fillRect(text.x, text.y-text.height, width, text.height+2);
+		  ctx.fillStyle = '#333333';
 		} 
 		ctx.fillText(text.text,text.x,text.y);
 		

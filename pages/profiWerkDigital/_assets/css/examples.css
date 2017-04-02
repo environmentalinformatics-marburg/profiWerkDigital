@@ -36,7 +36,7 @@ header p {
   background-position: 361px 162px;
   float:left;
   width:182px;
-  height:400px;
+  height:500px;
   background-repeat: repeat-x;
   left: 50%;
   margin-left: 299px;
@@ -62,7 +62,7 @@ header p {
 #container{
   background: #fafcff;
   width:960px;
-  height:400px;
+  height:500px;
   padding: 5px;
 }
 
