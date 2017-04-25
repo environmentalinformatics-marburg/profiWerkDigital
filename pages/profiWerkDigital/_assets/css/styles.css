@@ -1,0 +1,168 @@
+body {
+	width: 960px;
+}
+
+header {
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-weight: 200;
+	margin-bottom: 1rem;
+}
+
+
+header p {
+	margin: 0;
+	padding: 1em;
+	background: rgba(250, 252, 255, 0.7);
+}
+
+#window{
+    border: 1px #999 solid;
+    box-shadow: 10px 10px 15px silver;
+    display: none;
+    height: 80px;
+    left: 50%;
+    margin-left: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 142px;
+}
+
+#clipart{
+  background-image:url("../../img/scala_1.png");
+  background-position: 361px 162px;
+  float:left;
+  width:182px;
+  height:500px;
+  background-repeat: repeat-x;
+  left: 50%;
+  margin-left: 299px;
+  position: absolute;
+  z-index:10;
+}
+
+#index{
+  position: absolute;
+}
+
+#scala {
+  background: red none repeat scroll 0 0;
+  height: 72px;
+  left: 50%;
+  margin-left: 332px;
+  position: absolute;
+  top: 372px;
+  width: 94px;
+  z-index: 0;
+}
+
+.prof-container{
+  background: #fafcff;
+  width:960px;
+  height:500px;
+  padding: 5px;
+  line-height: 1.2em;
+}
+
+.prof-scalaPix{
+	position: relative;
+	background: red;
+	width:40px;
+	height:40px;
+}
+
+.prof-textDiv {
+  float:left;
+  width:809px;
+  height:200px;
+  background: rgba(250, 252, 255, 0.7) none repeat scroll 0 0;
+}
+
+.prof-canvasDiv{
+  width: 760px;
+  height: 200px;
+  float:left;
+}
+
+.prof-contL {
+	width: 680px;
+	float:left;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.prof-container p{
+  margin:0px;
+  font-size: 0.85em;
+}
+
+span.yellow{background-color:#ffff66;}
+span.red{ background-color:#ffff66;}
+span.violett{background-color:#FF00FF;}
+span.green{background-color:#ADFF2F;}
+
+.prof-contL p.sent{
+  padding-bottom: 7px;
+  padding-left: 30px;
+  padding-top: 7px;
+  font-size: 0.83em;
+}
+.prof-contR{
+  float: left;
+  padding-left: 30px;
+  text-align: center;
+  width: 180px;
+  padding-right: 30px;
+  font-size: 0.85em;
+}
+
+.button{
+    background: #f3f3f3 none repeat scroll 0 0;
+    border: 1px solid #999;
+    margin-top: 44px;
+    padding: 2px;
+    cursor:pointer;
+}
+.button:hover{
+   background-color:#999999;
+}
+.loading {
+	position: relative;
+}
+
+.loading:after {
+	content: url("../art/loading.gif");
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -13px 0 0 -51px;
+	opacity: 0.8;
+}
+
+#actColors, #example{
+  display:none;
+}
+#error {
+	display:none;
+	width: 960px;
+	text-align: left;
+	padding: 10px;
+}
+
+#mobile {
+    display:none;
+    width: 960px;
+    text-align: left;
+    padding: 10px;
+}
+
+body.embedded header {
+	display: none;
+}
+
+body.embedded {
+	margin: 0;
+}
