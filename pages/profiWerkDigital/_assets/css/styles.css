@@ -35,11 +35,11 @@ header p {
   background-image:url("../../img/scala_1.png");
   background-position: 361px 162px;
   float:left;
-  width:182px;
+  width:164px;
   height:500px;
   background-repeat: repeat-x;
   left: 50%;
-  margin-left: 299px;
+  margin-left: 314px;
   position: absolute;
   z-index:10;
 }
@@ -59,12 +59,18 @@ header p {
   z-index: 0;
 }
 
+#container{
+  background: #fafcff;
+  height:500px;
+  line-height: 1.2em;
+  padding:3px;
+}
+
 .prof-container{
   background: #fafcff;
-  width:960px;
   height:500px;
-  padding: 5px;
   line-height: 1.2em;
+  padding:3px;
 }
 
 .prof-scalaPix{
@@ -88,21 +94,27 @@ header p {
 }
 
 .prof-contL {
-	width: 680px;
+	width:760px;
 	float:left;
-  padding-top: 30px;
+	border-right: 1px solid #688296 ;
+	padding: 15px;
+}
+.in {
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-left: 30px;
 }
-
 .prof-container p{
   margin:0px;
-  font-size: 0.85em;
+  font-size: 0.84em;
 }
 
-span.yellow{background-color:#ffff66;}
-span.red{ background-color:#ffff66;}
-span.violett{background-color:#FF00FF;}
-span.green{background-color:#ADFF2F;}
+.yellow{background-color:#ffff66;}
+.red{ background-color:#ffff66;}
+.violett{background-color:#FF00FF;}
+.green{background-color:#ADFF2F;}
+.blue{background-color:#00FFFF;}
+.grey{background-color:#999999;}
 
 .prof-contL p.sent{
   padding-bottom: 7px;
@@ -114,7 +126,7 @@ span.green{background-color:#ADFF2F;}
   float: left;
   padding-left: 30px;
   text-align: center;
-  width: 180px;
+  width: 90px;
   padding-right: 30px;
   font-size: 0.85em;
 }
@@ -122,7 +134,6 @@ span.green{background-color:#ADFF2F;}
 .button{
     background: #f3f3f3 none repeat scroll 0 0;
     border: 1px solid #999;
-    margin-top: 44px;
     padding: 2px;
     cursor:pointer;
 }
@@ -142,9 +153,31 @@ span.green{background-color:#ADFF2F;}
 	opacity: 0.8;
 }
 
-#actColors, #example{
+#ex-content-2, #ex-content-3, #ex-but-2, #ex-but-3{
   display:none;
 }
+
+#tc-content-2{
+  height:100px;
+}
+/********************************************************/
+.prof-button-start{
+   margin-top:433px;
+}
+.prof-button-1{
+  margin-top:76px;
+}
+.prof-button-2{
+  margin-top:123px;
+}
+.prof-button-3{
+  margin-top:82px;
+}
+.prof-button-4{
+  width:200px;
+  margin-left:260px;
+}
+
 #error {
 	display:none;
 	width: 960px;
