@@ -459,7 +459,7 @@ $(function(){
   var sentenceIndex = 0;
   // submit the sentence
   document.getElementById('submit').onclick = function() { 
-    sentenceIndex++;
+    
     var tempRes = "";
     for(i = 0;i < arranged_texts.length;i++){
        text = arranged_texts[i];
@@ -467,7 +467,7 @@ $(function(){
        if(i == arranged_texts.length -1){
           tempRes = drawText(text.text, text.colorId, text.type) + "("+ text.sentenceId +")";
           submitedSentences += tempRes + ". ";
-          resultSentences += tempRes + "</p><p>";
+          resultSentences += tempRes + "</p><p>";sentenceIndex++;
        }
        else {
           tempRes = drawText(text.text,text.colorId,text.type) +" ";
@@ -481,8 +481,8 @@ $(function(){
     draw();
     document.getElementById("tc-content-2").innerHTML =  submitedSentences;
     // if all sentences are submited Continue!
-    if (sentenceIndex > 8) { 
-      //document.getElementById("tc-but-1").style.display="none";
+    if (sentenceIndex >= 9) { 
+      document.getElementById("tc-but-1").style.display="none";
       document.getElementById("tc-but-2").style.display="block";
     }
   }
