@@ -166,6 +166,7 @@ button{
   margin-top: 76px;
   padding: 8px;
   width: 95px;
+  cursor:pointer;
 }
 .prof-button-3{
   margin-top:82px;
