@@ -2,6 +2,7 @@
 function setColorRelations(){
   document.getElementById("ex-content-1").style.display = "none";
   document.getElementById("ex-content-2").style.display = "block";
+  document.getElementById("ex-but-1").style.display = "none";
   document.getElementById("ex-but-2").style.display = "block";
 }
 

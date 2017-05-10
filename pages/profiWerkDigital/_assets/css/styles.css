@@ -33,15 +33,15 @@ header p {
 
 #clipart{
   background-image:url("../../img/scala_1.png");
-  background-position: 361px 162px;
   float:left;
   width:132px;
-  height:500px;
-  background-repeat: repeat-x;
+  height:400px;
+  background-repeat: no-repeat;
   left: 50%;
   margin-left: 348px;
   position: absolute;
   z-index:10;
+  top:317px;
 }
 
 #index{
@@ -50,11 +50,11 @@ header p {
 
 #scala {
   background: red none repeat scroll 0 0;
-  height: 72px;
+  height: 65px;
   left: 50%;
   margin-left: 368px;
   position: absolute;
-  top: 402px;
+  top: 328px;
   width: 94px;
   z-index: 0;
 }
@@ -68,9 +68,10 @@ header p {
 
 .prof-container{
   background: #fafcff;
-  height:574px;
+  height:490px;
   line-height: 1.2em;
   padding:3px;
+  padding-top: 40px;
 }
 
 .prof-scalaPix{
@@ -96,13 +97,13 @@ header p {
 .prof-contL {
 	width:820px;
 	float:left;
-	border-right: 1px solid #688296 ;
 	padding: 2px;
 }
 .in {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 24px;
   padding-left: 30px;
+  padding-top: 24px;
+  font-size: 0.83em;
 }
 .prof-container p{
   margin:0px;
@@ -111,30 +112,23 @@ header p {
 
 .yellow{background-color:#FFCC00;}
 .red{ background-color:#FF0000;}
-.violett{background-color:#9900CC;}
+.violett{background-color:#FF00FF;}
 .green{background-color:#32CD32;}
 .blue{background-color:#1E90FF;}
-.grey{background-color:#666666;}
+.grey{background-color:#c1c511;}
 
-.prof-contL p.sent{
-  padding-bottom: 7px;
-  padding-left: 30px;
-  padding-top: 7px;
-  font-size: 0.83em;
-}
 .prof-contR{
   float: left;
   text-align: center;
   width: 90px;
-  font-size: 0.85em;
 }
 
-.button{
+button{
    /* background: #f3f3f3 none repeat scroll 0 0;*/
-   border: 0px ;
-    padding: 2px;
-    cursor:pointer;
-   
+  border:none;
+  padding: 2px;
+  cursor:pointer;
+  background:none; 
 }
 .button:hover{
    background-color:#999999;
@@ -152,45 +146,65 @@ header p {
 	opacity: 0.8;
 }
 
-#ex-content-2, #ex-content-3, #ex-but-2, #ex-but-3, #tc-but-3, #result-content-1, #result-content-2{
-  display:none;
-}
-#result-content-2{
-  position: absolute;
-  top: 369px;
-  padding:2px;
-}
-#tc-content-2, #result-content-1,  #result-content-2{
-  height:100px;
-}
-#result-content-1{
-  width:500px;
-}
-#result-content-2{
-  width:50px;
-}
 /********************************************************/
 .prof-button-start{
-   margin-top:433px;
+  background: #add8e6 none repeat scroll 0 0;
+  border: 1px solid #999999;
+  margin-left: 9px;
+  margin-top: 342px;
+  padding: 26px;
+  width: 61px;
 }
-.prof-button-1{
-  margin-top:76px;
+.prof-button-start a{
+   margin-top: 28px;
+   color:#111111;
 }
-.prof-button-2{
-  margin-top:123px;
+.prof-button-1,.prof-button-2,.prof-button-3,.prof-button-4,.prof-button-5{
+  background: #add8e6 none repeat scroll 0 0;
+  border: 1px solid #999999;
+  margin-left: 9px;
+  margin-top: 76px;
+  padding: 8px;
+  width: 95px;
 }
 .prof-button-3{
   margin-top:82px;
+  
 }
 .prof-button-4{
-  width:250px;
-  margin-left:260px;
+  margin-left:589px;
+  margin-top:0px;
+  width:211px;
   position:absolute;
 }
 .prof-button-5{
-  width:200px;
-  margin-left:560px;
+  margin-left:400px;
+  margin-top:41px;
+  width:400px;
   position:absolute;
+}
+.prof-button-6{
+  margin-left:260px;
+  background: #add8e6 none repeat scroll 0 0;
+  border: 1px solid #999999;
+  padding: 8px;width: 65px;
+}
+#ex-content-2, #ex-content-3, #ex-but-2, #ex-but-3, #tc-but-2,#tc-but-3,  #result-content-1, #result-content-2, #result-content-3, #result-content-4{
+  display:none;
+}
+
+#tc-content-2, #result-content-1,  #result-content-2{
+  height:100px;
+}
+#result-content-1,#result-content-2{
+  border-right: 1px solid;
+  height: 214px;
+  width: 780px;
+}
+#result-content-3,#result-content-4{
+  margin-left: -27px;
+  width: 143px;
+  height: 216px;
 }
 #error {
 	display:none;
@@ -200,10 +214,10 @@ header p {
 }
 
 #mobile {
-    display:none;
-    width: 960px;
-    text-align: left;
-    padding: 10px;
+  display:none;
+  width: 960px;
+  text-align: left;
+  padding: 10px;
 }
 
 body.embedded header {
