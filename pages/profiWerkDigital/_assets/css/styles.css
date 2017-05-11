@@ -108,10 +108,10 @@ header p {
 	padding: 2px;
 }
 .prof-container p.in {
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   padding-left: 30px;
-  padding-top: 24px;
-  font-size: 0.83em;
+  padding-top: 20px;
+  font-size: 0.99em;
 }
 .prof-container .infs{
   font-size: 0.80em;
@@ -148,6 +148,8 @@ button{
   padding: 2px;
   cursor:pointer;
   background:none; 
+  font-size: 0.90em;
+  
 }
 .button:hover{
    background-color:#999999;
@@ -186,6 +188,7 @@ button{
   padding: 8px;
   width: 95px;
   cursor:pointer;
+  font-size: 0.89em;
 }
 .prof-button-3{
   margin-top:82px;
