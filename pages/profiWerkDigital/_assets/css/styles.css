@@ -209,14 +209,14 @@ button{
   top:584px;
   margin-left:42px;
 }
-#ex-content-2, #ex-content-3, #ex-but-2, #ex-but-3, #tc-but-2, #result-content-1, #result-content-2, #result-content-3, #result-content-4{
+#ex-content-2, #ex-content-3, #ex-but-2, #ex-but-3, #tc-but-2, #result-content-1, #result-content-2, #result-content-3, #result-content-4,#result-content-6{
   display:none;
 }
 
 #tc-content-2, #result-content-1,  #result-content-2{
   height:120px;
 }
-#result-content-1,#result-content-2{
+#result-content-1,#result-content-2,#result-content-5{
   border-right: 1px solid;
   height: 214px;
   width: 780px;

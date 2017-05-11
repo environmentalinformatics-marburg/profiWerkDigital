@@ -562,5 +562,6 @@ $(function(){
     document.getElementById("result-content-3").style.display="block";
     document.getElementById("result-content-4").style.display="block";
     document.getElementById("result-content-4").innerHTML = "<p>Words between</p>"+ results + "<p>----</p><p>" + numberAllWords + "</p>";
+    document.getElementById("result-content-6").style.display="block";
   }
 }); // end $(function(){});
