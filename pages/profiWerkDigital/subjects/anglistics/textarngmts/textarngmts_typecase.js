@@ -376,9 +376,9 @@ $(function(){
     draw();
     
     if(checkOrder > 0) {	
-        var dif = 65/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
-        document.getElementById("scala").style.height = 65-dif + "px";
-        document.getElementById("scala").style.top = 328+dif + "px";
+        var dif = 55/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
+        document.getElementById("scala").style.height = 55-dif + "px";
+        document.getElementById("scala").style.top = 239 +dif + "px";
     }
   }
   
@@ -552,6 +552,7 @@ $(function(){
     document.getElementById("tc-but-3").style.display="block";
     document.getElementById("tc-content-2").style.display="none";
     document.getElementById("tc-content-3").style.display="none";
+    document.getElementById("tc-content-4").style.display="none";
     document.getElementById("scala").style.display="none";
     document.getElementById("clipart").style.display="none";
     document.getElementById("result-content-1").style.display="block";

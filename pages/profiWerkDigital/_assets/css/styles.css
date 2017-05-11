@@ -17,7 +17,9 @@ header p {
 	padding: 1em;
 	background: rgba(250, 252, 255, 0.7);
 }
-
+.prof-contL #result-content-1 p,.prof-contL #result-content-2 p,.prof-contR #result-content-3 p,.prof-contR #result-content-4 p{
+   margin:2px;
+}
 #window{
     border: 1px #999 solid;
     box-shadow: 10px 10px 15px silver;
@@ -35,13 +37,13 @@ header p {
   background-image:url("../../img/scala_1.png");
   float:left;
   width:132px;
-  height:400px;
+  height:180px;
   background-repeat: no-repeat;
   left: 50%;
-  margin-left: 348px;
+  margin-left: 352px;
   position: absolute;
   z-index:10;
-  top:317px;
+  top:232px;
 }
 
 #index{
@@ -54,7 +56,7 @@ header p {
   left: 50%;
   margin-left: 368px;
   position: absolute;
-  top: 328px;
+  top: 239px;
   width: 94px;
   z-index: 0;
 }
@@ -66,12 +68,18 @@ header p {
   padding:3px;
 }
 
+#tc-content-4{
+    /* border-color: #dfac20;
+    border-style: solid solid none;
+    border-width: thin;*/
+    margin-top: 9px;
+}
 .prof-container{
   background: #fafcff;
-  height:490px;
+  height:500px;
   line-height: 1.2em;
   padding:3px;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 .prof-scalaPix{
@@ -99,13 +107,21 @@ header p {
 	float:left;
 	padding: 2px;
 }
-.in {
+.prof-container p.in {
   padding-bottom: 24px;
   padding-left: 30px;
   padding-top: 24px;
   font-size: 0.83em;
 }
-.prof-container p{
+.prof-container .infs{
+  font-size: 0.80em;
+  line-height: 1em;
+}
+.prof-container p.infs {
+  padding: 0px;
+  margin:0px;
+}
+.prof-container{
   margin:0px;
   font-size: 0.85em;
 }
@@ -118,9 +134,12 @@ header p {
 .grey{background-color:#c1c511;}
 
 .prof-contR{
-  float: left;
-  text-align: center;
-  width: 90px;
+    background: #fffbf0 none repeat scroll 0 0;
+
+    float: left;
+    height: 493px;
+    text-align: center;
+    width: 130px;
 }
 
 button{
@@ -173,29 +192,29 @@ button{
   
 }
 .prof-button-4{
-  margin-left:589px;
   margin-top:0px;
-  width:211px;
   position:absolute;
+  top:470px;
 }
 .prof-button-5{
-  margin-left:400px;
-  margin-top:41px;
-  width:400px;
+  top:368px;
   position:absolute;
 }
 .prof-button-6{
-  margin-left:260px;
-  background: #add8e6 none repeat scroll 0 0;
-  border: 1px solid #999999;
-  padding: 8px;width: 65px;
+  padding: 15px;
+  width: 28px;
+  background-image: url("../../img/reloadButton.png");
+  background-repeat: no-repeat;
+  position:absolute;
+  top:584px;
+  margin-left:42px;
 }
-#ex-content-2, #ex-content-3, #ex-but-2, #ex-but-3, #tc-but-2,#tc-but-3,  #result-content-1, #result-content-2, #result-content-3, #result-content-4{
+#ex-content-2, #ex-content-3, #ex-but-2, #ex-but-3, #tc-but-2, #result-content-1, #result-content-2, #result-content-3, #result-content-4{
   display:none;
 }
 
 #tc-content-2, #result-content-1,  #result-content-2{
-  height:100px;
+  height:120px;
 }
 #result-content-1,#result-content-2{
   border-right: 1px solid;
@@ -203,7 +222,7 @@ button{
   width: 780px;
 }
 #result-content-3,#result-content-4{
-  margin-left: -27px;
+  margin-left: -10px;
   width: 143px;
   height: 216px;
 }
