@@ -1,0 +1,120 @@
+body {
+	width: 960px;
+}
+
+header {
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-weight: 200;
+	margin-bottom: 1rem;
+}
+
+dialog#window{
+  display: none;
+}
+header p {
+	margin: 0;
+	padding: 1em;
+	background: rgba(250, 252, 255, 0.7);
+}
+
+#canvas {
+
+}
+
+#clipart{
+  background-image:url("../../img/scala_1.png");
+	background-position: 361px 162px;
+	float:left;
+	width:182px;
+	height:400px;
+  background-repeat: repeat-x;
+  left: 50%;
+  margin-left: 299px;
+  position: absolute;
+	z-index:10;
+}
+#index{
+  position: absolute;
+}
+
+#scala {
+  background: red none repeat scroll 0 0;
+  height: 72px;
+  left: 50%;
+  margin-left: 332px;
+  position: absolute;
+  top: 372px;
+  width: 94px;
+  z-index: 0;
+}
+
+#container{
+  background: #fafcff;
+  width:960px;
+  height:400px;
+  padding: 5px;
+}
+#scalaPix{
+	position: relative;
+	background: red;
+	width:40px;
+	height:40px;
+}
+
+#textDiv {
+	float:left;
+  width:809px;
+  height:200px;
+	background: rgba(250, 252, 255, 0.7) none repeat scroll 0 0;
+}
+
+
+#canvasDiv {
+	width: 760px;
+  height: 400px;
+  float:left;
+}
+
+.content {
+	width: 960px;
+	height: 400px;
+	overflow: hidden;
+}
+
+.loading {
+	position: relative;
+}
+
+.loading:after {
+	content: url("../art/loading.gif");
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -13px 0 0 -51px;
+	opacity: 0.8;
+}
+
+#error {
+	display:none;
+	width: 960px;
+	text-align: left;
+	padding: 10px;
+}
+
+#mobile {
+    display:none;
+    width: 960px;
+    text-align: left;
+    padding: 10px;
+}
+
+body.embedded header {
+	display: none;
+}
+
+body.embedded {
+	margin: 0;
+}

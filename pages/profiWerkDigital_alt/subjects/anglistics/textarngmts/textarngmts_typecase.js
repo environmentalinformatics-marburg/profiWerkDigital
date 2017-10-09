@@ -1,4 +1,12 @@
-
+(function() {  
+    var dialog = document.getElementById('window');  
+    document.getElementById('show').onclick = function() {  
+        dialog.show();  
+    };  
+    document.getElementById('exit').onclick = function() {  
+        dialog.close();  
+    };  
+})();
 var checkOrder = 0;
 $(function(){
 
@@ -61,50 +69,80 @@ function Text(id, arrId, sentenceId, type, text, x, y)
 
 
 
-
+// Sentence 1
 arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"That");
 arranged_texts[arranged_texts.length] = new Text(4,0,1,2,"linguistics is a difficult subject for most first-year students");
-texts[texts.length] = new Text(1,0,1,1,"It");
+texts[texts.length] = new Text(1,0,1,2,"It");
 arranged_texts[arranged_texts.length] = new Text(2,0,1,2,"becomes apparent fairly early in their first semester");
-texts[texts.length] = new Text(3,0,1,1,"that");
+texts[texts.length] = new Text(3,0,1,2,"that");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(1).");
 
-arranged_texts[arranged_texts.length] = new Text(0,0,0,0,".  ");
 
-
-/*
-arranged_texts[arranged_texts.length] = new Text(5,0,2,2," This ");
-arranged_texts[arranged_texts.length] = new Text(6,0,2,2,"is due to");
+// Sentence 2
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"There are");
 arranged_texts[arranged_texts.length] = new Text(7,0,2,2,"three reasons");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"for this");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(2).");
+texts[texts.length] = new Text(5,0,2,2," This ");
+texts[texts.length] = new Text(6,0,2,2,"is due to");
 
-arranged_texts[arranged_texts.length] = new Text(8,0,3,2,"The first reason");
+// Sentence 3
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"The fact that linguistics is usually not taught at school");
 arranged_texts[arranged_texts.length] = new Text(9,0,3,2,"is");
-arranged_texts[arranged_texts.length] = new Text(10,0,3,2,"the fact that linguistics is usually not taught at school");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"the first reason");
+texts[texts.length] = new Text(8,0,3,2,"The first reason");
+texts[texts.length] = new Text(10,0,3,2,"the fact that linguistics is usually not taught at school");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(3).");
 
-arranged_texts[arranged_texts.length] = new Text(11,0,4,2,"In this respect");
-arranged_texts[arranged_texts.length] = new Text(12,0,4,2,"literature or cultural studies");
+// Sentence 4
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"Literature or cultural studies");
 arranged_texts[arranged_texts.length] = new Text(13,0,4,2,"have a more privileged status");
+arranged_texts[arranged_texts.length] = new Text(11,0,4,2,"In this respect");
+texts[texts.length] = new Text(12,0,4,2,"literature or cultural studies");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(4).");
 
-arranged_texts[arranged_texts.length] = new Text(14,0,5,2,"These subjects");
-arranged_texts[arranged_texts.length] = new Text(15,0,5,2,"are taught by teachers in school");
+// Sentence 5
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"Teachers teach");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"these subjects in scholl");
+texts[texts.length] = new Text(14,0,5,2,"These subjects");
+texts[texts.length] = new Text(15,0,5,2,"are taught by teachers in school");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(5).");
 
-arranged_texts[arranged_texts.length] = new Text(16,0,6,2,"The second reason");
+// Sentence 6
+arranged_texts[arranged_texts.length] = new Text(18,0,6,2,"The fact that students have to learn");
 arranged_texts[arranged_texts.length] = new Text(17,0,6,2,"is");
-arranged_texts[arranged_texts.length] = new Text(18,0,6,2,"the fact that students have to learn");
-arranged_texts[arranged_texts.length] = new Text(19,0,6,2,"many new terms");
-arranged_texts[arranged_texts.length] = new Text(20,0,6,2,"in linguistics");
+arranged_texts[arranged_texts.length] = new Text(16,0,6,2,"the second reason");
+texts[texts.length] = new Text(18,0,6,2,"the fact that students have to learn");
+texts[texts.length] = new Text(19,0,6,2,"many new terms");
+texts[texts.length] = new Text(16,0,6,2,"The second reason");
+texts[texts.length] = new Text(20,0,6,2,"in linguistics");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(6).");
 
-arranged_texts[arranged_texts.length] = new Text(21,0,7,2,"To get a grip on");
-arranged_texts[arranged_texts.length] = new Text(22,0,7,2,"all the new concepts");
+// Sentence 7
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"It");
 arranged_texts[arranged_texts.length] = new Text(23,0,7,2,"is very demanding");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"to get a grip on");
+texts[texts.length] = new Text(21,0,7,2,"To get a grip on");
+arranged_texts[arranged_texts.length] = new Text(22,0,7,2,"all the new concepts");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(7).");
 
-arranged_texts[arranged_texts.length] = new Text(24,0,8,2,"Another reason");
+// Sentence 8
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"The abstract nature of linguistics");
+texts[texts.length] = new Text(24,0,8,2,"Another reason");
 arranged_texts[arranged_texts.length] = new Text(25,0,9,2,"is");
-arranged_texts[arranged_texts.length] = new Text(26,0,10,2,"the abstract nature of linguistics");
+texts[texts.length] = new Text(0,0,0,0,"another reason");
+texts[texts.length] = new Text(26,0,10,2,"the abstract nature of linguistics");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(8).");
 
-arranged_texts[arranged_texts.length] = new Text(27,0,11,2,"Often");
-arranged_texts[texts.length] = new Text(28,0,11,2,"this");
-arranged_texts[arranged_texts.length] = new Text(29,0,11,2,"scares students off");
-*/
+// Sentence 9
+arranged_texts[arranged_texts.length] = new Text(27,0,9,2,"Often");
+arranged_texts[arranged_texts.length] = new Text(27,0,9,2,"students are scared off by");
+texts[texts.length] = new Text(28,0,9,2,"this");
+texts[texts.length] = new Text(29,0,9,2,"scares students off");
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"(9).");
+
+arranged_texts[arranged_texts.length] = new Text(0,0,0,0,"To include aspects of linguistics into English language teaching ...(10).");
+
 //texts[texts.length] = new Text(9999,0,0,1,"that ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
 //texts[texts.length] = new Text(9999,0,0,1," is ",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
 //texts[texts.length] = new Text(9999,0,0,1," is",rpos(canvasWidth, 5, 30),rpos(fieldHeight, 100, 350));
@@ -122,6 +160,14 @@ arranged_texts[arranged_texts.length] = new Text(29,0,11,2,"scares students off"
  *  shufle array random, extends of class Array
  **/
 Array.prototype.shuffle = arrayShuffle;
+//load_media();
+ctx.font="16px verdana";
+var yPositions = new Array();
+
+// this var will hold the index of the selected text
+var selectedText = -1;
+var selectedType = 0; // 0 == text, 1 == arranged_text
+
 
 function arrayShuffle(){
   var tmp, rand;
@@ -133,59 +179,19 @@ function arrayShuffle(){
   }
 }
 
-var yPositions = new Array(); 
 for(var i = 0; i<texts.length; i++) {
-     yPositions[i] = i*10 + 60;
+     yPositions[i] = i*10 + 190;
 }
+
 yPositions.shuffle();
 
-
-//load_media();
-ctx.font="16px verdana";
-
-// calculate x and y position and width of each text for hit-testing purposes
-for(var i = 0;i < texts.length;i++){
-	var text=texts[i];
-	if(text.type == 1){
-	  	text.x = 10;
-	  	text.y = text.id*10+80;
-	} else {
-	    scalaPositions++;
-	  	text.x=rpos(canvasWidth, 80, canvasWidth/2);
-	  	text.y=yPositions[i];
-	} 
-	text.width=ctx.measureText(text.text).width;
-	text.height=text_height;
-}
-// calculate x and y position and width of each arranded text for hit-testing purposes
-for(var i = 0;i < arranged_texts.length;i++){
-  var text=arranged_texts[i];
-	if(text.type == 1){
-	  	text.x = 20;
-	  	text.y = text.id*10+180;
-	} else {
-	  text.width=ctx.measureText(text.text).width;
-	  text.height=text_height;
-	}
-}
-update_arranged_texts();
-update_texts();
-
-// this var will hold the index of the selected text
-var selectedText = -1;
-var selectedType = 0; // 0 == text, 1 == arranged_text
-//var selectedId = 0;
+update_arranged_texts(true);
+update_texts(true);
 
 // START: draw all texts to the canvas
 draw();
-
-/*function load_media()
-{
-  scala_image = new Image();
-  scala_image.src="scala_1.png";
-  scala_image_start = new Image();
-  scala_image_start.src="scala_0.png";
-}*/
+update_arranged_texts(false);
+draw();
 
 // clear the canvas draw all texts
 function draw(){
@@ -194,10 +200,9 @@ function draw(){
 	ctx.fillRect(0, 0, canvas.width, typecase_border);
 	for(var i = 0;i < texts.length;i++){
 		var text=texts[i];
-	//	ctx.fillStyle = '#f50';
 		ctx.font="14px Arial";
 		ctx.fillStyle = 'grey';
-		if (selectedType == 0)
+		if (selectedType === 0)
 		  if(selectedText >- 1 && selectedText == i){
       			ctx.font="bold 16px Arial";
 		}
@@ -205,19 +210,26 @@ function draw(){
 	}
 	ctx.font="14px Arial";
 	ctx.fillStyle = 'black';	
-	for(var i = 0;i < arranged_texts.length;i++){
-		var text = arranged_texts[i];
+	for(i = 0;i < arranged_texts.length;i++){
+		text = arranged_texts[i];
 		ctx.fillText(text.text,text.x,text.y);
 	}
 }
 
-function update_arranged_texts() {
+function update_arranged_texts(start_play) {
 	var posX = 0;
 	typecase_border = text_height + text_gap;
 	var posY = typecase_border;	
-
 	for(var i = 0;i < arranged_texts.length;i++){
 		var text=arranged_texts[i];
+		// calculate x and y position and width of each arranded text for hit-testing purposes
+  	if(start_play) {
+    	if(text.type == 2){
+    	  	scalaPositions++;
+    	} 
+    	text.width=ctx.measureText(text.text).width;
+    	text.height=text_height;
+    }
 		text.arrId = i;
 		text.x = posX;
 		text.y = posY;		
@@ -234,21 +246,36 @@ function update_arranged_texts() {
 	typecase_border += text_height + text_gap;
 }
 
-function update_texts() {
+function update_texts(start_play) {
+  var posX = 0;
 	for(var i = 0;i < texts.length;i++){
 		var text = texts[i];
-		if(text.x + ctx.measureText(text.text).width > canvas.width) {
-			text.x = canvas.width - ctx.measureText(text.text).width ;
-		}
-		if(text.x < 0) {
-			text.x = 0;
-		}
-		if(text.y < typecase_border + text.height) {
-			text.y = typecase_border + text.height;
-		}
-		if(text.y > canvas.height) {
-			text.y = canvas.height;
-		}
+		if(start_play) {
+  		if(text.type == 2){
+  	  	scalaPositions++;
+    	} 
+  		if(posX > canvas.width/2) {
+  			posX = 0;
+  		}	
+  		text.x = posX;
+  		posX += ctx.measureText(text.text).width + text_gap;
+  	  text.y = yPositions[i];
+  	  text.width=ctx.measureText(text.text).width;
+  	  text.height=text_height;
+	  } else {
+    		if(text.x + ctx.measureText(text.text).width > canvas.width) {
+    			text.x = canvas.width - ctx.measureText(text.text).width ;
+    		}
+    		if(text.x < 0) {
+    			text.x = 0;
+    		}
+    		if(text.y < typecase_border + text.height) {
+    			text.y = typecase_border + text.height;
+    		}
+    		if(text.y > canvas.height) {
+    			text.y = canvas.height;
+    		}
+	  }
 	}
 }
 
@@ -306,7 +333,7 @@ function handleMouseUp(e){
   var startX = parseInt(e.clientX-offsetX);
   var startY = parseInt(e.clientY-offsetY);
   if(selectedText >= 0) {
-	 // if(selectedType == 0) {
+	  if(selectedType === 0) {
 		  var text = texts[selectedText];
 		  if(text.y < typecase_border) {
 			targetText = -1;  
@@ -322,15 +349,15 @@ function handleMouseUp(e){
 				texts.splice(selectedText, 1);
 				arranged_texts.splice(targetText, 0, text);
 			}
-		//  }
+		 }
 	  } else if(selectedType == 1) {
-		  var text = arranged_texts[selectedText];
+		  text = arranged_texts[selectedText];
 		  if(text.y > typecase_border) {
 			  arranged_texts.splice(selectedText, 1);
 			  texts.push(text);
 		  } else {
 				targetText = -1;  
-				for(var i = 0;i < arranged_texts.length;i++){
+				for(i = 0;i < arranged_texts.length;i++){
 					if(i != selectedText && textHittest(arranged_texts, startX, startY, i)){
 						targetText=i;
 					}
@@ -349,18 +376,15 @@ function handleMouseUp(e){
   }
   
   selectedText=-1;
-  update_arranged_texts();
-  update_texts();
+  update_arranged_texts(false);
+  update_texts(false);
   check_arranged_texts();
   draw();
   
   if(checkOrder > 0) {	
-      var dif = 131/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
-      document.getElementById("scala").style.height = 131-dif + "px";
-      document.getElementById("scala").style.top = 381+dif + "px";
-  	 // ctx.fillRect(canvasWidth-100,136+dif, 78, 60-dif);
-	  //  ctx.drawImage(scala_image,0,0,150,200,canvasWidth-130,100,150,200);
-    // document.getElementById("index").innerHTML= "checkOrder:" +checkOrder;
+      var dif = 72/(scalaPositions)*checkOrder;//30ctx.fillStyle = 'red';
+      document.getElementById("scala").style.height = 72-dif + "px";
+      document.getElementById("scala").style.top = 380+dif + "px";
   }
 }
 
@@ -368,8 +392,8 @@ function handleMouseUp(e){
 function handleMouseOut(e){
   e.preventDefault();
   selectedText=-1;
-  update_arranged_texts();
-  update_texts();
+  update_arranged_texts(false);
+  update_texts(false);
   draw();
 }
 
@@ -389,7 +413,7 @@ function handleMouseMove(e){
   startX=mouseX;
   startY=mouseY;
 
-  if(selectedType == 0) {
+  if(selectedType === 0) {
 	  var text=texts[selectedText];
 	  text.x += dx;
 	  text.y += dy;
