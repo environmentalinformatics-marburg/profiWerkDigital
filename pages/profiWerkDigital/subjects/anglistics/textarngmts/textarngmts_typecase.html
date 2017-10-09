@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>ProfiWeb: Textstruktur</title>
 
-	<link href="../../../_assets/css/shared.css" rel="stylesheet" type="text/css"/>
-	<link href="../../../_assets/css/examples.css" rel="stylesheet" type="text/css"/>
-	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-	<script type="text/javascript" src="textarngmts_typecase.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>ProfiWeb: Textstruktur</title>
+
+  <link href="../../../_assets/css/shared.css" rel="stylesheet" type="text/css" />
+  <link href="../../../_assets/css/styles.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+  <script type="text/javascript" src="textarngmts_typecase.js"></script>
 
 </head>
 
 <body>
-<header class="EaselJS">
-	<h1>ProfiWeb Anglistik: Textstruktur</h1>
-	<p>Sortiere den Text: <br>That linguistics is a difficult subject for most first-year students becomes apparent
-fairly early in their first semester. There are three reasons for this. The fact that
-linguistics is usually not taught at school is the first reason. Literary or cultural
-studies have a more privileged status in this respect. Teachers teach these subjects
-in school. The fact that students have to learn many new terms in linguistics is the
-second reason. It is very demanding to get a grip on all the new concepts. The
-abstract nature of linguistics is another reason. Often students are scared off by
-this. </p><!--<spam id="index">Index </spam> -->
-</header>
+  <header class="EaselJS">
+    <h1>ProfiWeb Anglistik: Textstruktur</h1>
+    <!--<spam id="index">Index </spam> -->
+  </header>
+  <div class="prof-container">
+    <div class="prof-contL">
 
-<div id="canvasDiv">
-  <canvas id="canvas" width="960" height="400"></canvas>
+    <div id="result-content-1" ></div>
+    <div id="result-content-2" ></div>
+    <div id="result-content-6" ><p class="infs"><b>The linguistics behind this</b></br>
+Already over 100 years ago, linguists formulated the idea that each sentence should begin with something that is known to the reader and then move on to something that
+is new. This has been termed the given-before-new principle. If you look at the original text, you see that many sentences start with new information and that given or
+known information occurs at the end. In your revised version, you have moved those known bits (closer) to the beginning of the sentence. In the new version, the
+sentences all follow the given-before-new principle.</p>
 </div>
-<div id="scala"></div>
-<div>
-<p><a href="../../../index.html">Home</a></p>
+    <div id="tc-content-3" ><canvas id="canvas" width="820" height="260"></canvas></div>
+    <div id="tc-content-2" ></div>
+    <div id="tc-content-4" >        <p class="infs">These are possible sentence structures that
+you could use. For instance, sometimes you
+might want to use a passive clause instead of
+an active one, but maybe you might want to
+change a passive to an active clause!</p>
+<table class="infs"> <tr> <td><b>Passive </b></br>~ I gave the book to Peter </br>~ The book was given to Peter (by me). </br>~ Peter was given the book (by me).</td><td><b>Cleft sentence</b></br>~ Jim found Penny in the casino last night.</br>~ It was Jim who found Penny in the casinolast night.</br>~ It was Penny who Jim found in the casinolast night.</br>~ It was in the casino that Jim found Pennylast night.</br>~ It was last night that Jim found Penny in thecasino.</td><td><b>Inversion</b></br>~ The activation of the students is extremely
+problematic.</br>~ Extremely problematic is the activation ofthe students.</td> </tr> </table>
+
+    </div>
+
+  </div>
+  <div class="prof-contR">
+      <div id="scala"></div>
+      <div id="clipart" ></div>
+      <div id="result-content-3" ><p>Words between</p>
+        <p>13</p><p>13</p><p>13</p><p>10</p><p>46</p><p>15</p><p>68</p><p>9</p><p>----</p><p>187</p></div>
+      <div id="result-content-4" ></div><div id="tc-but-1" class="prof-button-4 button" ><button id="submit">Click to submit your sentence!</button></div>
+    	<div id="tc-but-2" class="prof-button-5 button" ><button id="check">Click to compare the original text and your revised vesion!</button></div>
+    	<div id="tc-but-3" class="prof-button-6 button" ><button id="check"></button></div>
+  </div>
 </div>
+  <dialog id="window">
+    <p>Test was successful!</p>
+    <button id="exit">X</button>
+  </dialog>
+  <div>
+    <p><a href="../../../index.html">Home</a></p>
+  </div>
 </body>
+
 </html>
